@@ -1,10 +1,30 @@
 // get amount=1000 from query params
-import { renderSync as render, Text, startLightning, Config } from "@lightningjs/solid"
+// import { renderSync as render, Text, startLightning, Config } from "@lightningjs/solid"
+import { render } from "solid-js/web";
+import { createSignal } from "solid-js";
 const urlParams = new URLSearchParams(window.location.search);
 const amount = urlParams.get('amount');
+const app = document.getElementById("app");
 
-//Config.debug = true;
-await startLightning();
+function Text(props) {
+    return <div {...props}></div>;
+}
+
+function View(props) {
+    return <div {...props}></div>;
+}
+
+
+function Counter() {
+  const [count, setCount] = createSignal(1);
+  const increment = () => setCount(count => count + 1);
+
+  return (
+    <button type="button" onClick={increment}>
+      {count()}
+    </button>
+  );
+}
 
 const results = document.getElementById('results');
 if (results) {
@@ -34,12 +54,12 @@ const log = (msg, replace) => {
 const suite = new Benchmark.Suite('UI Component Testing')
 
 suite.add('Component 1', () => {
-    render(() => <Text>Hello World</Text>, '#app');
+    render(() => <Counter />, app);
     return true;
 });
 
 suite.add('Component 2', () => {
-    render(() => <Text>Hello World</Text>, '#app');
+    render(() => <div>Hi</div>, app);
     return true;
 });
 
@@ -60,7 +80,5 @@ log('Ready!');
 setTimeout(() => {
     log('Starting benchmark...', true);
     log(' ');
-    setTimeout(() => {
-        suite.run();
-    }, 10);
+    suite.run();
 }, 100);

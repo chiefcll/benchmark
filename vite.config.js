@@ -23,4 +23,7 @@ export default defineConfig({
     '@lightningjs/renderer/core',
     '@lightningjs/renderer/workers/renderer']
   },
+  server: {
+    hmr: false,
+  },
 });
