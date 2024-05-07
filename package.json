@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Used to test performance of SolidJS Components",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "setup": "cp node_modules/benchmark/benchmark.js public/benchmark.js && cp node_modules/lodash/lodash.js public/lodash.js",
     "build": "vite build",
@@ -12,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@lightningjs/l3-ui-theme-base": "^0.3.3",
     "@lightningjs/renderer": "^0.8.4",
     "@lightningjs/solid": "^0.15.15",
+    "@lightningjs/solid-primitives": "^0.6.6",
     "@lightningjs/solid-ui": "^0.15.0",
     "benchmark": "^2.1.4",
     "solid-js": "^1.8.17"

@@ -2,18 +2,10 @@
 // import { renderSync as render, Text, startLightning, Config } from "@lightningjs/solid"
 import { render } from "solid-js/web";
 import { createSignal } from "solid-js";
+import { Badge } from "@lightningjs/solid-ui";
 const urlParams = new URLSearchParams(window.location.search);
 const amount = urlParams.get('amount');
 const app = document.getElementById("app");
-
-function Text(props) {
-    return <div {...props}></div>;
-}
-
-function View(props) {
-    return <div {...props}></div>;
-}
-
 
 function Counter() {
   const [count, setCount] = createSignal(1);
@@ -59,7 +51,7 @@ suite.add('Component 1', () => {
 });
 
 suite.add('Component 2', () => {
-    render(() => <div>Hi</div>, app);
+    render(() => <Badge>Hello</Badge>, app);
     return true;
 });
 

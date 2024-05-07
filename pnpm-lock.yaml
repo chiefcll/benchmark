@@ -5,21 +5,24 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@lightningjs/l3-ui-theme-base':
+    specifier: ^0.3.3
+    version: 0.3.3
   '@lightningjs/renderer':
     specifier: ^0.8.4
     version: 0.8.4
   '@lightningjs/solid':
     specifier: ^0.15.15
     version: 0.15.15(@lightningjs/renderer@0.8.4)(solid-js@1.8.17)
+  '@lightningjs/solid-primitives':
+    specifier: ^0.6.6
+    version: 0.6.6(@lightningjs/solid@0.15.15)(solid-js@1.8.17)
   '@lightningjs/solid-ui':
     specifier: ^0.15.0
     version: 0.15.0(@lightningjs/solid-primitives@0.6.6)(@lightningjs/solid@0.15.15)(solid-js@1.8.17)
   benchmark:
     specifier: ^2.1.4
     version: 2.1.4
-  memize:
-    specifier: ^2.1.0
-    version: 2.1.0
   solid-js:
     specifier: ^1.8.17
     version: 1.8.17
@@ -492,6 +495,10 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
+
+  /@lightningjs/l3-ui-theme-base@0.3.3:
+    resolution: {integrity: sha512-lbEO8OChUokt6CcudGZt7SL2laEDDbfPmeN6ttgGaid8/n3CN1eFgPXngZSG2mNNOrruUadGh3j81thphgFUdg==}
+    dev: false
 
   /@lightningjs/renderer@0.8.4:
     resolution: {integrity: sha512-ybFTlM7HzKM6lbbtpV01X25pKVBeXXyRwmKMT6E1RHN1hJBkjmkz+BboFReL3Wq/FrsAg5zPO15baPEIH6brqA==}
